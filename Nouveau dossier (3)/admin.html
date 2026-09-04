@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم — تعاونية المستقبل</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div id="loginBox" class="login-wrap">
+  <form class="login-card" id="loginForm">
+    <div class="login-ico">🔐</div>
+    <h1>لوحة التحكم</h1>
+    <p class="login-sub">تعاونية المستقبل — Espace Admin</p>
+    <input type="password" id="pwd" placeholder="كلمة المرور" autocomplete="current-password" required>
+    <button type="submit" class="btn-a">دخول →</button>
+    <p class="login-err" id="loginErr"></p>
+  </form>
+</div>
+
+<div id="dash" style="display:none">
+  <header class="adm-top">
+    <div class="adm-brand">🫓 تعاونية المستقبل <small>لوحة التحكم</small></div>
+    <div class="adm-actions">
+      <button id="muteBtn" title="صوت الطلب الجديد">🔔</button>
+      <button id="themeBtn" title="الوضع الليلي">☀️</button>
+      <button id="refreshBtn" title="تحديث">🔄</button>
+      <button id="cloudBtn">☁️ ربط</button>
+      <button id="logoutBtn" class="danger">🚪 خروج</button>
+    </div>
+  </header>
+
+  <main class="adm-main container-a">
+    <div class="tabs">
+      <button class="tab active" data-tab="orders">📦 Les commandes</button>
+      <button class="tab" data-tab="prods">🛠️ Gérer les produits</button>
+      <button class="tab" data-tab="stats">📊 Statistiques</button>
+    </div>
+
+    <section id="tab-orders">
+      <div class="stats">
+        <div class="st-card"><div class="st-ico">📦</div><div><b id="stTotal">0</b><span>مجموع الطلبات</span></div></div>
+        <div class="st-card"><div class="st-ico">📅</div><div><b id="stToday">0</b><span>طلبات اليوم</span></div></div>
+        <div class="st-card"><div class="st-ico">💰</div><div><b id="stRevenue">0 د.م.</b><span>رقم المعاملات</span></div></div>
+        <div class="st-card"><div class="st-ico">👥</div><div><b id="stClients">0</b><span>زبناء مختلفين</span></div></div>
+      </div>
+
+      <div class="tools">
+        <input type="search" id="q" placeholder="🔍 قلب بالاسم، الهاتف، العنوان أو رقم الطلب...">
+        <select id="fPeriod">
+          <option value="all">كل الفترات</option>
+          <option value="today">اليوم فقط</option>
+          <option value="week">هاد السيمانة (7 أيام)</option>
+        </select>
+        <select id="fStatus">
+          <option value="">كل الحالات</option>
+          <option>جديد</option>
+          <option>مؤكد</option>
+          <option>تم التسليم</option>
+          <option>ملغي</option>
+        </select>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th><th>الزبون</th><th>العنوان</th><th>الطلب</th><th>المجموع</th><th>الموعد المطلوب</th><th>وقت الطلب</th><th>الحالة</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+        <div class="empty-tbl" id="emptyTbl" style="display:none">📭 ما كاين حتى طلب دابا<br><small>الطلبات الجديدة غادي بانو هنا أوتوماتيكياً</small></div>
+      </div>
+
+      <details class="adv">
+        <summary>⚙️ أدوات متقدمة — تصدير، نسخة احتياطية، حذف</summary>
+        <div class="adv-row">
+          <button id="csvBtn" title="تصدير">⬇️ تصدير Excel</button>
+          <button id="bkBtn" title="نسخة احتياطية">💾 نسخة احتياطية</button>
+          <button id="rsBtn" title="استرجاع نسخة">📂 استرجاع نسخة</button>
+          <input type="file" id="rsFile" accept=".json,application/json" hidden>
+          <button id="clearBtn" class="danger" title="حذف الكل">🗑️ حذف كل الطلبات</button>
+        </div>
+        <p class="cl-hint">💡 التصدير والنسخة كيتسجلو فجهازك. «حذف الكل» ما كيرجعش — استعملها بحذر!</p>
+      </details>
+
+      <div class="note-box">
+        ℹ️ الطلبات كيتسجلو كاملين فهاد المتصفح وما كيتمحاوش — تقدر تفلتر بالسيمانة ولا بالنهار من الفلتر اللي فوق. باش تشوف نفس الطلبات من أي جهاز آخر، خاص السايت ينشر على استضافة بقاعدة بيانات.
+      </div>
+    </section>
+
+    <section id="tab-prods" style="display:none">
+      <div class="prod-tools">
+        <h2>🛠️ بدّل المنتجات — التصويرة، الثمن، الوصف...</h2>
+        <div class="prod-tools-btns">
+          <button id="addProdBtn" class="pe-add-btn">➕ زيد منتج جديد</button>
+          <button id="resetProds">↩️ رجّع كلشي للوضع الأصلي</button>
+        </div>
+      </div>
+      <form id="newProdForm" class="np-form" style="display:none">
+        <div class="np-grid">
+          <label>سمية المنتج *<input id="npName" required placeholder="مثال: حرشة بالجبن"></label>
+          <label>القسم
+            <select id="npCat">
+              <option value="khobz">🫓 الخبز والأفطائر</option>
+              <option value="ma2kulat">🍲 المأكولات (بالأحجام)</option>
+              <option value="halwa">🍬 الحلويات</option>
+            </select>
+          </label>
+          <label id="npPriceLbl">الثمن (درهم) *<input id="npPrice" type="number" step="0.5" min="0" required placeholder="15"></label>
+          <label>الوحدة<input id="npUnit" placeholder="للكيلو / للقطعة..."></label>
+          <label>إيموجي<input id="npEmoji" maxlength="4" placeholder="✨"></label>
+        </div>
+        <div id="npVarsBox" style="display:none">
+          <p class="np-vars-title">🍲 الأحجام ديال المأكولات (عمّر الثمن ديال كل واحد):</p>
+          <div class="np-grid">
+            <label>فردي — شخص واحد *<input id="npV1" type="number" step="0.5" min="0" placeholder="25"></label>
+            <label>لشخصين<input id="npV2" type="number" step="0.5" min="0" placeholder="45"></label>
+            <label>طبق عائلي<input id="npV3" type="number" step="0.5" min="0" placeholder="85"></label>
+          </div>
+        </div>
+        <label>الوصف<textarea id="npDesc" rows="2" placeholder="وصف قصير يبان تحت السمية..."></textarea></label>
+        <div class="np-bottom">
+          <label class="pe-up np-img-lbl">📷 تصويرة (اختياري)<input type="file" accept="image/*" id="npImg" hidden></label>
+          <span id="npImgPrev"></span>
+          <button type="submit" class="pe-save">💾 سجّل المنتج</button>
+          <button type="button" id="npCancel" class="np-cancel">إلغاء</button>
+        </div>
+      </form>
+      <div class="prod-hint">✏️ بدل اللي بغيتي وضغط «سجّل» — البدلات كيبانو نيشان فالسايت الرئيسي. «ظاهر فالسايت» كتخبي المنتج بلا ما تمسح. 🗑️ كتمسح غير المنتجات الجداد اللي زدتي.</div>
+      <div class="brand-card">
+        <h3>🎨 هوية الموقع — اللوگو و تصاور الواجهة المتحركة</h3>
+        <div class="brand-row">
+          <div class="brand-slot">
+            <small>اللوگو</small>
+            <div class="slot-prev" id="prevLogo">🫓</div>
+            <label class="pe-up sm">📷 بدّل<input type="file" accept="image/*" data-idn="logo" hidden></label>
+            <button type="button" class="slot-x" data-idnx="logo" title="رجّع الأصلي">✖</button>
+          </div>
+          <div class="brand-slot">
+            <small>تصويرة 1</small>
+            <div class="slot-prev" id="prevHero0">🫓</div>
+            <label class="pe-up sm">📷 بدّل<input type="file" accept="image/*" data-idn="hero0" hidden></label>
+            <button type="button" class="slot-x" data-idnx="hero0" title="رجّع الأصلي">✖</button>
+          </div>
+          <div class="brand-slot">
+            <small>تصويرة 2</small>
+            <div class="slot-prev" id="prevHero1">🍞</div>
+            <label class="pe-up sm">📷 بدّل<input type="file" accept="image/*" data-idn="hero1" hidden></label>
+            <button type="button" class="slot-x" data-idnx="hero1" title="رجّع الأصلي">✖</button>
+          </div>
+          <div class="brand-slot">
+            <small>تصويرة 3</small>
+            <div class="slot-prev" id="prevHero2">🍬</div>
+            <label class="pe-up sm">📷 بدّل<input type="file" accept="image/*" data-idn="hero2" hidden></label>
+            <button type="button" class="slot-x" data-idnx="hero2" title="رجّع الأصلي">✖</button>
+          </div>
+        </div>
+        <p class="cl-hint">💡 كتبدل دغيا منين تختار التصويرة. إلا كنتي ☁️ مربوط، غادي يبانو لجميع الزوار فكل التيليفونات!</p>
+      </div>
+      <div class="prod-list" id="prodList"></div>
+    </section>
+
+    <section id="tab-stats" style="display:none">
+      <div class="stats-grid2">
+        <div class="chart-card">
+          <h3>🏆 أشمن produit كيتبع كثر</h3>
+          <div id="topProds"></div>
+        </div>
+        <div class="chart-card">
+          <h3>📈 الطلبات ديال 7 أيام</h3>
+          <div class="week-chart" id="weekChart"></div>
+        </div>
+      </div>
+      <div class="stats-grid2">
+        <div class="chart-card rev-card">
+          <h3>💰 رقم المعاملات (7 أيام)</h3>
+          <div class="big-num" id="weekRev">0 د.م.</div>
+        </div>
+        <div class="chart-card rev-card">
+          <h3>🥇 أحسن زبون</h3>
+          <div class="big-num" id="topClient" style="font-size:1.4rem">—</div>
+          <p class="empty-mini" id="topClientSub"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="modal-c" id="cloudModal">
+  <div class="cloud-box">
+    <button class="x-btn" id="cloudClose">✕</button>
+    <h3>☁️ Firebase Cloud</h3>
+    <p class="cl-status" id="clStatus"></p>
+    <div id="clLogin">
+      <label>Email dyal Firebase
+        <input type="email" id="clEmail" placeholder="admin@almoustakbal.ma">
+      </label>
+      <label>Password dyal Firebase
+        <input type="password" id="clPass" placeholder="••••••••">
+      </label>
+      <button class="btn-a" id="clConnect">🔗 Connecter</button>
+      <p class="login-err" id="clErr"></p>
+      <p class="cl-hint">💡 Compte khaso ytsawb f: Firebase Console → Authentication → Sign-in method → Email/Password → Add user</p>
+    </div>
+    <div id="clConnected" style="display:none">
+      <p class="cl-ok">✅ Mrhba! Daba les commandes kayjiwo <b>LIVE</b> mn kol telephone o kol PC, o les produits li katbdel katsjlo f Cloud l kolchi.</p>
+      <button class="np-cancel" id="clDisconnect">🚪 Déconnecter</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-auth-compat.js"></script>
+<script src="js/fb.js"></script>
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
