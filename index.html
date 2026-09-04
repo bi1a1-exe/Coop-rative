@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تعاونية المستقبل 🫓 الخبز والحلويات التقليدية — الهرهورة</title>
+<meta name="description" content="تعاونية المستقبل لإنتاج الخبز والحلويات بالهرهورة — مسمن، خبز بلدي، رغايف، مخمر، بغرير وكسكس بلدي. اطلب أونلاين ويوصل حتى لباب الدار.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🫓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#faf6ec">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="المستقبل">
+</head>
+<body>
+
+<div id="preloader"><div class="loader-ico" id="preloaderIco">🫓</div><div class="loader-bar"><i></i></div></div>
+
+<header id="header">
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <span class="brand-ico">🫓</span>
+      <span class="brand-txt"><b data-i18n="brand_b">تعاونية المستقبل</b><small data-i18n="brand_s">لإنتاج الخبز والحلويات — الهرهورة</small></span>
+    </a>
+    <nav id="navLinks">
+      <a href="#home" data-i18n="nav_home">الرئيسية</a>
+      <a href="#products" data-i18n="nav_products">المنتجات</a>
+      <a href="#avis" data-i18n="nav_avis">آراء الزبناء</a>
+      <a href="#contact" data-i18n="nav_contact">اتصل بنا</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="langBtn" class="theme-btn" aria-label="Français">FR</button>
+      <button id="themeBtn" class="theme-btn" aria-label="الوضع الليلي">☀️</button>
+      <button id="cartBtn" class="cart-btn" aria-label="السلة">🛒<span id="cartCount" class="badge">0</span></button>
+      <button id="burger" aria-label="القائمة">☰</button>
+    </div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <span class="fl f1">🫓</span><span class="fl f2">🍞</span><span class="fl f3">🥞</span>
+  <span class="fl f4">🥖</span><span class="fl f5">🍲</span><span class="fl f6">✨</span>
+  <div class="container hero-in">
+    <div class="hero-badge reveal" data-i18n="hero_badge">✨ صناعة مغربية أصيلة — من قلب الهرهورة</div>
+    <h1 class="reveal d1"><span data-i18n="hero_t1">الخبز والحلويات</span> <span class="grad" data-i18n="hero_t2">بحال ديال الدار</span></h1>
+    <p class="hero-sub reveal d2" data-i18n="hero_sub">مسمن، خبز بلدي، رغايف، مخمر، بغرير وكسكس... محضّرين كل صباح بمكونات نقية وريحة تفتح النفس، وكيوصلوك حتى لباب الدار 🏠</p>
+    <div class="hero-cta reveal d3">
+      <a href="#products" class="btn btn-gold shine" data-i18n="hero_cta1">🛍️ اطلب دابا</a>
+      <a href="#contact" class="btn btn-ghost" data-i18n="hero_cta2">📍 فين كاينين؟</a>
+    </div>
+    <div class="hero-stats reveal d4">
+      <div class="stat"><b data-count="1200">0</b><span data-i18n="stat1">طلب وصل لمكانو</span></div>
+      <div class="stat"><b data-count="100">0</b><span data-i18n="stat2">% طازج ومحضّر يومياً</span></div>
+      <div class="stat"><b data-count="10">0</b><span data-i18n="stat3">منتجات تقليدية أصيلة</span></div>
+    </div>
+    <div class="hero-slider reveal d5">
+      <div id="hsSlides"></div>
+      <div class="hs-dots" id="hsDots"></div>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#products">▾</a>
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,50 C240,95 480,0 720,35 C960,70 1200,20 1440,55 L1440,90 L0,90 Z" fill="#faf6ec"></path></svg>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>مسمن ✦</span><span>خبز بلدي ✦</span><span>رغايف ✦</span><span>مخمر ✦</span><span>بغرير ✦</span><span>كسكس ✦</span><span>حلويات ✦</span>
+    <span>مسمن ✦</span><span>خبز بلدي ✦</span><span>رغايف ✦</span><span>مخمر ✦</span><span>بغرير ✦</span><span>كسكس ✦</span><span>حلويات ✦</span>
+  </div>
+</div>
+
+<section id="products" class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="orn">❖</div>
+      <h2 data-i18n="prod_title">المنتجات ديالنا</h2>
+      <p data-i18n="prod_sub">اختر، زيد للسلة، وحدد الوقت اللي بغيتي فيه الطلب</p>
+    </div>
+    <div class="search-box reveal"><input type="search" id="prodSearch" data-i18n-ph="search_ph" placeholder="🔍 قلب على produit..."></div>
+    <div class="filters reveal">
+      <button class="f-btn active" data-cat="all" data-i18n="f_all">الكل</button>
+      <button class="f-btn" data-cat="khobz" data-i18n="f_khobz">🫓 الخبز والأفطائر</button>
+      <button class="f-btn" data-cat="ma2kulat" data-i18n="f_ma2kulat">🍲 المأكولات</button>
+      <button class="f-btn" data-cat="halwa" data-i18n="f_halwa">🍬 الحلويات</button>
+    </div>
+    <div class="grid" id="prodGrid"></div>
+  </div>
+</section>
+</div>
+
+<section id="avis" class="section avis">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="orn">❖</div>
+      <h2 data-i18n="avis_title">شنو كيقولو علينا؟</h2>
+      <p data-i18n="avis_sub">آراء الزبناء ديالنا هم أحسن دليل</p>
+    </div>
+    <div class="avis-grid">
+      <div class="avis-card reveal"><div class="stars">★★★★★</div><p data-i18n="av1">"المسمن والبغرير ديالهم بحال ديال الجدة بالضبط! ولدي كيقول لي دابا نشري من فيهم كل نهار."</p><div class="avis-a">— فاطمة الزهراء، الهرهورة</div></div>
+      <div class="avis-card reveal d1"><div class="stars">★★★★★</div><p data-i18n="av2">"طلبت كسكس عائلي لنهار الجمعة، وصل سخون وفي وقتو بالضبط. تعامل راقي وناس مزيانين."</p><div class="avis-a">— Youssef B.</div></div>
+      <div class="avis-card reveal d2"><div class="stars">★★★★★</div><p data-i18n="av3">"حلويات ديال الأعراس عندهم مستوى آخر! الضياف كاملين سولاني منين شريتهم 😍"</p><div class="avis-a">— خديجة ع.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="orn">❖</div>
+      <h2 data-i18n="ct_title">اتصل بنا</h2>
+      <p data-i18n="ct_sub">حنيين نستناوك — عيّط، راسل ولا زورنا</p>
+    </div>
+    <div class="contact-grid">
+      <a class="c-card reveal" id="telCard" href="#">
+        <div class="c-ico">📞</div><h3 data-i18n="ct_phone_t">التيليفون</h3><p dir="ltr" id="phoneTxt"></p><span class="c-link" data-i18n="ct_call">عيّط علينا دابا ↗</span>
+      </a>
+      <a class="c-card reveal d1" id="waCard" href="#" target="_blank" rel="noopener">
+        <div class="c-ico">💬</div><h3>WhatsApp</h3><p data-i18n="ct_wa_txt">طلبات وأسئلة مباشرة</p><span class="c-link" data-i18n="ct_wa_link">راسلنا دابا ↗</span>
+      </a>
+      <a class="c-card reveal d2" id="mapCard" href="#" target="_blank" rel="noopener">
+        <div class="c-ico">📍</div><h3 data-i18n="ct_map_t">العنوان</h3><p data-i18n="ct_map_txt">الهرهورة — شوف موقعنا فـ Google Maps</p><span class="c-link" data-i18n="ct_map_link">افتح الخريطة ↗</span>
+      </a>
+      <div class="c-card reveal d3">
+        <div class="c-ico">🕒</div><h3 data-i18n="ct_hours_t">أوقات العمل</h3><p data-i18n-html="ct_hours_txt">كل يوم<br>من 06:00 إلى 20:00</p>
+      </div>
+    </div>
+    <div class="socials reveal">
+      <a class="soc fb" id="fbLink" href="#" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+      <a class="soc ig" id="igLink" href="#" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+      <a class="soc wa" id="waLink" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+    </div>
+    <div class="qr-wrap reveal">
+      <h3 data-i18n="qr_title">📱 امسح الكود وزور السايت</h3>
+      <div id="qrBox"></div>
+      <p class="qr-url" id="qrUrl"></p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container foot-in">
+    <div class="foot-brand">🫓 <span data-i18n="brand_b">تعاونية المستقبل</span> <small>Coopérative Al Mostakbal — Pain & Pâtisseries</small></div>
+    <div class="foot-links">
+      <a id="footFb" href="#" target="_blank" rel="noopener">Facebook</a>
+      <a id="footIg" href="#" target="_blank" rel="noopener">Instagram</a>
+      <a id="footWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+    <div class="foot-copy">© <span id="year"></span> — <span data-i18n="foot_rights">جميع الحقوق محفوظة</span> 🇲🇦</div>
+    <p class="legal-note"><span data-i18n="legal">⚖️ تنبيه: كل طلب كيتسجل فيه عنوان IP والموقع التقريبي — الطلبات الزائفة كتعرض صاحبها للمتابعة حسب القانون المغربي</span> <span style="opacity:.5">v29</span></p>
+  </div>
+</footer>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<button id="botFab" aria-label="المساعد">🤖</button>
+<button id="topBtn" aria-label="فوق">↑</button>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="drawer" id="drawer" aria-label="سلة الطلبات">
+  <div class="drawer-head">
+    <h3>🛒 <span data-i18n="cart_title">السلة ديالك</span></h3>
+    <button class="x-btn" id="closeCart">✕</button>
+  </div>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="total-row"><span data-i18n="cart_total">المجموع</span><strong id="cartTotal">0 د.م.</strong></div>
+    <button class="btn btn-wa w100" id="checkoutBtn" data-i18n="cart_checkout">كمّل الطلب ✅</button>
+  </div>
+</aside>
+
+<div class="modal" id="checkoutModal">
+  <div class="modal-box">
+    <button class="x-btn" id="closeCheckout">✕</button>
+    <h3 class="m-title" data-i18n="co_title">معلومات الطلب 🚚</h3>
+    <form id="orderForm" novalidate>
+      <label><span data-i18n="co_name">الاسم الكامل *</span><input type="text" name="name" placeholder="محمد العلوي" data-i18n-ph="ph_name" required></label>
+      <label><span data-i18n="co_phone">رقم الهاتف *</span><input type="tel" name="phone" placeholder="06XXXXXXXX" required></label>
+      <div class="dtype-row">
+        <label class="chip"><input type="radio" name="dtype" value="delivery" checked><span data-i18n="co_del">🛵 توصيل للدار</span></label>
+        <label class="chip"><input type="radio" name="dtype" value="pickup"><span data-i18n="co_pick">🏪 استلام من المحل</span></label>
+      </div>
+      <label id="addrLabel"><span data-i18n="co_addr">العنوان *</span><input type="text" name="address" placeholder="الحي، الزنقة، الرقم..." data-i18n-ph="ph_addr"></label>
+      <div class="two-col">
+        <label><span data-i18n="co_date">نهار الطلب *</span><input type="date" name="date" required></label>
+        <label><span data-i18n="co_time">الوقت *</span>
+          <select name="slot" required>
+            <option value="" data-i18n="slot_choose">اختر الوقت...</option>
+            <option data-i18n="slot_asap">في أقرب وقت ممكن</option>
+            <option>07:00 - 09:00</option>
+            <option>09:00 - 12:00</option>
+            <option>12:00 - 15:00</option>
+            <option>16:00 - 19:00</option>
+            <option>19:00 - 20:00</option>
+          </select>
+        </label>
+      </div>
+      <label><span data-i18n="co_note">ملاحظة (اختياري)</span><textarea name="note" rows="2" placeholder="مثلا: الخبز بلا ملح..." data-i18n-ph="co_note_ph"></textarea></label>
+      <div class="co-summary" id="coSummary"></div>
+      <p class="form-err" id="formErr"></p>
+      <button type="submit" class="btn btn-wa w100" data-i18n="co_submit">أكّد الطلب عبر WhatsApp 💬</button>
+      <p class="co-note2" data-i18n="co_note2">الطلب غادي يتسجل عندنا ويوصلك تأكيد فالهاتف</p>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="successModal">
+  <div class="modal-box success-box">
+    <div id="confetti"></div>
+    <div class="ok-check">✔</div>
+    <h3 data-i18n="ok_title">شكراً بزاف! 🎉</h3>
+    <p data-i18n="ok_txt">الطلب ديالك تسجل عندنا، غادي نعيّطو عليك قريباً للتأكيد.</p>
+    <p class="ok-id" id="orderIdLbl"></p>
+    <button class="btn btn-gold" id="closeSuccess" data-i18n="ok_close">مسا الخير 😊</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="bot-panel" id="botPanel">
+  <div class="bot-head"><b>🤖 <span data-i18n="bot_title">مساعد المستقبل</span></b><button class="x-btn" id="botClose">✕</button></div>
+  <div class="bot-body" id="botBody"></div>
+  <div class="bot-chips" id="botChips"></div>
+  <form class="bot-input" id="botForm"><input id="botText" autocomplete="off" placeholder="كتب سؤالك..." data-i18n-ph="bot_ph"><button type="submit">➤</button></form>
+</div>
+
+<script src="js/qrcode.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.18.0/firebase-auth-compat.js"></script>
+<script src="js/fb.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('sw.js?v=29').catch(() => {}));
+</script>
+</body>
+</html>

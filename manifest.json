@@ -1,0 +1,17 @@
+﻿{
+  "name": "ØªØ¹Ø§ÙˆÙ†ÙŠØ© Ø§Ù„Ù…Ø³ØªÙ‚Ø¨Ù„ â€” Ø§Ù„Ø®Ø¨Ø² ÙˆØ§Ù„Ø­Ù„ÙˆÙŠØ§Øª",
+  "short_name": "Ø§Ù„Ù…Ø³ØªÙ‚Ø¨Ù„",
+  "description": "Ù…Ø³Ù…Ù†ØŒ Ø®Ø¨Ø² Ø¨Ù„Ø¯ÙŠØŒ ÙƒØ³ÙƒØ³ ÙˆØ­Ù„ÙˆÙŠØ§Øª ØªÙ‚Ù„ÙŠØ¯ÙŠØ© Ù…Ù† Ù‚Ù„Ø¨ Ø§Ù„Ù‡Ø±Ù‡ÙˆØ±Ø© â€” Ø§Ø·Ù„Ø¨ Ø£ÙˆÙ†Ù„Ø§ÙŠÙ† ÙˆÙŠÙˆØµÙ„ Ø­ØªÙ‰ Ù„Ø¨Ø§Ø¨ Ø§Ù„Ø¯Ø§Ø±",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf6ec",
+  "theme_color": "#faf6ec",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
